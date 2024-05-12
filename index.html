@@ -1,0 +1,532 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kisan Mitra</title>
+    <!-- Link Swiper's CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            overflow-x: hidden;
+            
+        }
+
+        
+/* header style start */
+        header {
+            background-color:#ffffff00;
+            position: absolute;
+            width: 100vw;
+            box-sizing: border-box;
+            padding: 10px;
+            padding-right: 20px;
+        }
+
+        .logo {
+            width: 4rem; /* Adjust logo width as needed */
+            margin-left: 1rem;
+        }
+        /* navbar style */
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        /* toggle button css */
+        .menu-toggle {
+            display: none; /* Hide toggle button by default */
+        }
+
+        nav {
+            flex: 1;
+            display: flex;
+            justify-content: flex-end;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #333;
+            padding: 5px 10px;
+            transition-duration: 0.3s;
+            text-align: center;
+        }
+        nav a:hover{
+            color: rgb(34, 229, 23);
+        }
+        .nav-download-btn{
+                border: 2px solid rgb(34, 229, 23);
+                border-radius: 1rem;
+        }
+        .nav-download-btn:hover{
+            border: 2px solid rgb(0, 0, 0);
+        }
+
+        /* Responsive Header Styles */
+        @media screen and (max-width: 768px) {
+            .menu-toggle {
+                display: block; /* Display toggle button for small screens */
+                cursor: pointer;
+            }
+
+            nav {
+                display: none; /* Hide nav links by default on small screens */
+                flex-direction: column;
+                position: absolute;
+                top: 60px;
+                right: 0px;
+                background-color: #f8f9fa;
+                border-radius: 5px;
+                width: 100vw;
+                
+            }
+
+            nav a {
+                display: block;
+                margin-bottom: 10px;
+            }
+           
+            nav.active {
+                transition-duration: 0.5s;
+                display: flex; /* Show nav links when active */
+            }
+        }
+    /* header end */
+
+    /* hero section styles start */
+        .hero-section{
+            width: 100vw;
+            height: 100vh;
+            background-image: url(./media/background.png);
+            background-position: center;
+            background-size: cover;
+            overflow: hidden !important; 
+            z-index: 0;
+        }
+        .hero-contener{
+            width: 100%;
+            height: 100%;
+            background-color: rgba(255, 255, 255, 0.374);
+            display: grid;
+            grid-template-columns: 40% auto;
+            place-items: center;
+            z-index: 0;
+        }
+
+        .hero-text-area{
+            width: 90%;
+            height: 50%;
+            display: grid;
+            place-items: center;
+        }
+        .hero-text-area h2{
+            color: #0c9400;
+            font-size: 2.5rem;
+        }
+        .hero-text-area a{
+            display: block;
+            background-image: url(./media/hero-playstore-logo.png);
+            height: 50px;
+            width: 158px;
+            background-size: cover;
+        
+        }
+        .hero-text-area p{
+            font-size: large;
+        }
+        /* The animation code */
+        @keyframes example {
+        0% {margin-top: 0rem;}
+        50% {margin-top: 1rem;}
+        100%{margin-top: 0rem;}
+        }
+        .hero-img-area img{
+            height: 90vh;
+            animation-name: example;
+            animation-duration: 2s;
+            animation-iteration-count:infinite;
+            animation-timing-function: linear;
+            box-sizing: border-box;
+        }
+        
+    /* hero section styles end */
+
+    /* About The App start */
+
+        .about{
+            width: 100vw;
+            height: auto;  
+            z-index: 0;
+            margin-bottom: 150px;
+        }
+
+        .about-contner::after{
+            content: "";
+            position: absolute;
+            left: 0;
+            height: 768px;
+            width: 100%;
+            background-image: url("media/home1-about.svg");
+            z-index: -1;
+            background-size: cover;
+
+        }
+        .about-contner{
+            width: 100%;
+            height: 100%;
+            position: relative;
+            display: grid;
+            place-items: center;
+            box-sizing: border-box;
+        }
+        .about-text-area{
+            width: 100%;
+            height: auto;
+            display: grid;
+            grid-auto-flow: row;
+            place-items: center;
+            margin-top: 5rem;
+        }
+        .about-text-area h2{
+            font-size: xx-large;
+        }
+        .about-text-area p{
+            width: 60%;
+            font-size: x-large;
+            color: #515151;
+        }
+        .about-card-area{
+            width: 80%;
+            height: 15rem;
+            display: grid;
+            place-items: center;
+        }
+        @media screen and (max-width: 768px) {
+            .hero-contener {
+                grid-template-columns: 100%;
+                grid-template-rows: 60% auto;
+            }
+            .hero-text-area{
+                z-index: 2;
+            }
+            .hero-img-area img {
+                height: auto;
+                width: 90vw;
+            }
+        }
+
+    /* About section styles end */
+
+    /* featured area start */
+        .featured{
+            width: 100vw;
+            height: 120vh;
+            background-image: url("./media/featured-bg.svg");
+            background-size: cover;
+            display: grid;
+            grid-template-columns: 30% auto;
+            place-items: center;
+        }
+        .featured>img{
+            height: 70%;
+            margin-top: 100px;
+            animation-name: example;
+            animation-duration: 2s;
+            animation-iteration-count:infinite;
+            animation-timing-function: linear;
+        }
+        .featured-text-area{
+            width: 100%;
+            height: 80%;
+            display: grid;
+            place-items: center;
+            grid-template-rows: 20% auto;
+           
+        }
+        .featured-text-area h2{
+            width: 80%;
+            text-align: left;
+            margin-top: 100px;
+            font-size: x-large;
+            color: rgb(255, 255, 255);
+        }
+        .featured-cards{
+            width: 100%;
+            height: auto;
+            display: grid;
+            grid-template-columns: 50% auto;
+            place-items: center;
+        }
+        .featured-cards .card{
+            width: 80%;
+            height: auto;
+            display: grid;
+            grid-template-columns: 20% 80%;
+            place-items: center;
+        }
+        .featured-cards .card-text{
+            font-size: medium;
+            font-weight: 500;
+            color: whitesmoke;
+        }
+        .featured-cards .card-text h4{
+            color: rgb(255, 255, 255);
+            font-size: large;
+            line-height: 1px;
+        }
+        .featured-cards .card-text p{
+            color: rgba(255, 255, 255, 0.753);
+        }
+    /* featured area end */
+
+    /* slider area start */
+        .sl-heading{
+        width: 50%;
+        display: grid;
+        place-items: center;
+        }
+        .sl-heading h2{
+        font-size: x-large;
+        }
+        .sl-heading p{
+        font-size: larger;
+        font-weight: 600;
+        color: #00000099;
+        }
+        .slider-section{
+        width: 100vw;
+        height: auto;
+        box-sizing: border-box;
+        padding: 3REM;
+        display: grid;
+        grid-auto-flow: row;
+        place-items: center;
+        margin-bottom: 3rem;
+        }
+        .swiper {
+        width: 743px;
+        height: 403px;
+        }
+
+        .swiper-slide {
+        text-align: center;
+        font-size: 18px;
+        background: #fff;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        }
+
+        .swiper-slide img {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        }
+    .sl-btn{
+        position: relative;
+        bottom: -50px;
+        width: 100px;
+        display: grid;
+        place-items: center;
+    }
+    .swiper-button-next:after, .swiper-button-prev:after {
+        font-size: x-large;
+        font-weight: 700;
+    }
+    /* slider area end */
+
+    /* contect-from start */
+    .contect-from{
+        width: 100vw;
+        height: 100vh;
+        padding-top: 3rem;
+        display: grid;
+        grid-template-rows: 20% auto;
+        place-items: center;
+        background-image: -webkit-linear-gradient(0deg, #96d250 0%, #61c941 60%, #2bbf31 100%);
+        background-image: -ms-linear-gradient(0deg, #96d250 0%, #61c941 60%, #2bbf31 100%);
+    }
+    .contect-contener{
+        width: 80%;
+        height: 90%;
+        display: grid;
+        grid-template-columns: 60% 40%;
+        place-items: center;
+       
+    }
+    form{
+        display: grid;
+        grid-auto-flow: row;
+        row-gap: 2rem;
+    }
+    form input, form textarea{
+        padding: 0.5rem;
+        background: #6eb648;
+        outline: none;
+        border: none;
+        border-radius: 5px;
+        color: white;
+    }
+    form textarea{
+        height: 5rem;
+        background: #6eb648;
+        resize: vertical;
+        line-height: 1.5rem;
+    }
+    form input[type="submit"]{
+        cursor: pointer;
+        -webkit-transition: 0.4s;
+        transition: 0.4s;
+        border-radius: 3px;
+        background-image: -webkit-linear-gradient(0deg, #fc826d 0%, #fea268 60%, #ffc163 100%);
+        background-image: -ms-linear-gradient(0deg, #fc826d 0%, #fea268 60%, #ffc163 100%);
+    }
+    form input[type="submit"]:hover {
+        background-image: -webkit-linear-gradient(0deg, rgb(255, 193, 99) 0%, rgb(254, 162, 104) 40%, rgb(252, 130, 109) 100%);
+        background-image: -ms-linear-gradient(0deg, rgb(255, 193, 99) 0%, rgb(254, 162, 104) 40%, rgb(252, 130, 109) 100%);
+    }
+    .contect-details{
+        width: 70%;
+        height: 60%;
+        background-color: white;
+        padding: 0.5rem;
+        padding-left: 2rem;
+        font-size: small;
+        border-radius: 5px;
+    }
+    /* contect-from end */
+
+    /* footer start */
+   
+    footer{
+        width: 100vw;
+        height: 400px;
+        background-image: -webkit-linear-gradient(0deg, #96d250 0%, #61c941 60%, #2bbf31 100%);
+        background-image: -ms-linear-gradient(0deg, #96d250 0%, #61c941 60%, #2bbf31 100%);
+    }
+    .footer-contener{
+        width: 100vw;
+        height: 400px;
+        background-color: transparent;
+        z-index: 1;
+        background-image: url("./media/footer-bg-3.svg");
+        background-size: cover;
+        position: relative;
+        display: grid;
+        place-items: center;
+    }
+    .footer-contener::before{
+        background: url("./media/footer-bg-2.svg");
+        position: absolute;
+        left: 0;
+        top: 0;
+        height: 100%;
+        width: 100%;
+        content: "";
+        z-index: -1;
+        background-size: cover;
+        background-position: top;
+    }
+    .footer-contener::after{
+        content: "";
+        width: 100vw;
+        height: 400px;
+        display: block;
+        background-image: url("./media/footer-bg1.svg");
+        background-size: cover;
+        z-index: -1;
+        position: relative;
+    }
+    .footer-main-area{
+        width: 40%;
+        height: 50%;
+        display: grid;
+        place-items: center;
+        position: absolute;
+        top: 40%;
+        display: grid;
+        place-items: center;
+        grid-auto-flow: dense;
+        align-content: space-evenly;
+        
+    }
+    .footer-links{
+        width: 100%;
+        display: grid;
+        place-items: center;
+        grid-auto-flow: column;
+    }
+    .footer-main-area a{
+        text-decoration: none;
+        color: white;
+    }
+    .footer-socil-links{
+        width: 50%;
+        display: grid;
+        grid-auto-flow: column;
+    }
+    .footer-socil-links svg{
+        width: 25px;
+        fill: white;
+    }
+    .copyright{
+        position: absolute;
+        bottom: 0px;
+        color: white;
+    }
+    /* footer end */
+    </style>
+</head>
+<body>
+    <!-- Header start -->
+    <header>
+        <div class="navbar">
+            
+           <img class="logo" src="./media/kmLogo.png">
+           <h2 style="font-size: x-large; padding-left: 0.5rem; color: #1ccd53;">Kisan Mitra</h2>
+            <!-- Mobile toggle button -->
+            <div class="menu-toggle" onclick="toggleMenu()">
+                <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M3 12h18M3 6h18M3 18h18"></path>
+                </svg>
+            </div>
+            <!-- navbar -->
+            <nav>
+                <a href="#">Home</a>
+                <a href="#">FAQ</a>
+                <a class="nav-download-btn" href="#">Download</a>
+            </nav>
+        </div>
+    </header>
+
+<!-- toggle button script -->
+    <script>
+        function toggleMenu() {
+            var nav = document.querySelector('nav');
+            nav.classList.toggle('active');
+        }
+    </script>
+<!-- header end -->
+
+<!-- Hero Section start -->
+<section class="hero-section">
+    <div class="hero-contener">
+        <div class="hero-text-area">
+            <h2>A Perfect Landing Page to Present Your App</h2>
+            <p>A mobile app is a computer program designed to run on a mobile device such as a phone/tablet or watch.</p>
+            <a href="#"></a>
+        </div>
+        <div class="hero-img-area">
+            <img src="./media/home1-hero-mobile-img.png" alt="" srcset="">
+        </div>
+    </div>
+</section>
+<!-- Hero Section end -->
+
+
+</body>
+</html>
