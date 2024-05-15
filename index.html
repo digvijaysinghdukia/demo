@@ -95,7 +95,9 @@
             }
         }
     /* header end */
-
+        section{
+            position: relative;
+        }
     /* hero section styles start */
         .hero-section{
             width: 100vw;
@@ -151,7 +153,7 @@
             animation-timing-function: linear;
             box-sizing: border-box;
         }
-                @media screen and (max-width: 768px) {
+        @media screen and (max-width: 768px) {
             .hero-contener {
                 grid-template-columns: 100%;
                 grid-template-rows: 60% auto;
@@ -187,7 +189,7 @@
             position: absolute;
             left: 0;
             height: 768px;
-            width: 100%;
+            width: 100vw;
             background-image: url("media/home1-about.svg");
             z-index: -1;
             background-size: cover;
@@ -252,7 +254,12 @@
         }
         @media screen and (max-width: 768px) {
             .about-card-area{
-                grid-template-columns: repeat(1, 1fr);
+                grid-template-columns: auto;
+
+            }
+            .about-card-area {
+                width: 80%;
+                height: auto;
             }
         }
 
@@ -317,6 +324,31 @@
         }
         .featured-cards .card-text p{
             color: rgba(255, 255, 255, 0.753);
+        }
+        @media screen and (max-width: 768px) {
+            .featured {
+                height: fit-content;
+                grid-template-columns: auto;
+                grid-template-rows: 50% auto;
+            }
+            .featured-cards{
+                grid-template-columns: auto;
+                row-gap: 20px;
+            }
+            .featured-text-area {
+                width: 100%;
+                height: 100%;
+            }
+            .featured-text-area {
+                grid-template-rows: 0% auto;
+            }
+        
+            .featured>img {
+                height: 70%;
+                margin-top: 0px;
+                position: relative;
+                top: -150px;
+            }
         }
     /* featured area end */
 
@@ -594,5 +626,72 @@
   <!-- About section end -->
   
 
+    <!--  featured area start -->
+    <section class="featured">
+        <img src="./media/featured-mobile.png" alt="">
+        <div class="featured-text-area">
+            <h2>featured</h2>
+            <div class="featured-cards">
+                <div class="card">
+                    <img src="./media/featured-icon1.png" alt="">
+                    <div class="card-text">
+                        <h4>User Friendly</h4>
+                        <p>Most such devices are sold with apps bundled as installed.</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="./media/featured-icon2.png" alt="">
+                    <div class="card-text">
+                        <h4>Smooth Typography</h4>
+                        <p>Most such devices are sold with apps bundled as installed.</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="./media/featured-icon3.png" alt="">
+                    <div class="card-text">
+                        <h4>Super Fast</h4>
+                        <p>Most such devices are sold with apps bundled as installed.</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="./media/featured-icon4.png" alt="">
+                    <div class="card-text">
+                        <h4>Creative Design</h4>
+                        <p>Most such devices are sold with apps bundled as installed.</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="./media/featured-icon5.png" alt="">
+                    <div class="card-text">
+                        <h4>User Friendly</h4>
+                        <p>Most such devices are sold with apps bundled as installed.</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="./media/featured-icon6.png" alt="">
+                    <div class="card-text">
+                        <h4>User Friendly</h4>
+                        <p>Most such devices are sold with apps bundled as installed.</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="./media/featured-icon7.png" alt="">
+                    <div class="card-text">
+                        <h4>User Friendly</h4>
+                        <p>Most such devices are sold with apps bundled as installed.</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="./media/featured-icon8.png" alt="">
+                    <div class="card-text">
+                        <h4>User Friendly</h4>
+                        <p>Most such devices are sold with apps bundled as installed.</p>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </section>
+  <!--  featured area end -->
 </body>
 </html>
